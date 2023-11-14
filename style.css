@@ -1,0 +1,260 @@
+* {
+    margin : 0;
+    padding : 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style-type: none;
+    box-sizing : border-box;
+    text-decoration: none;
+}
+
+@keyframes test {
+    from {
+        width: 10%;
+    }
+
+    to {
+        width: 75%;
+    }
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: hsl(243, 100%, 93%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100dvh;
+    width: 100dvw;
+
+    background-image: url(/images/bg-mobile.png);
+    background-size: cover;
+}
+
+.card {
+    height: min(100dvh, 25rem);
+    width: min(100dvw, 20rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title, .card-use {
+    width: 100%;
+    background-color:  hsl(228, 56%, 26%);
+}
+
+.card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    border-radius: 10px 70px 10px 10px;
+
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.all-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 65%;
+    height: 45px;
+
+    margin-top: 30px;
+}
+
+.img-div {
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 45px;
+
+    border-radius: 10px;
+
+    background-color: hsl(229, 57%, 11%);
+
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+.img-div:hover {
+    background-color: hsl(243, 100%, 93%);
+}
+
+.card-use {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    padding: 30px 25px;
+
+    border-radius: 10px;
+}
+
+.content-card {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.content-card h1 {
+    text-align: center;
+    padding: 0 5px;
+    margin-bottom: 15px;
+}
+
+.content-card h1 strong{
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+}
+
+.bar {
+    color: transparent;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 3px;
+
+    background-color: hsl(229, 57%, 11%);
+}
+
+.progression {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    border-radius: 10px;
+
+    padding: 3px;
+
+    width: 75%;
+
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+
+    animation-duration: 2s;
+    animation-name: test;
+}
+
+.round {
+    width: 14px;
+    height: 14px;
+
+    border-radius: 100%;
+    background-color: white;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.disp {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    bottom: -35px;
+
+    width: 165px;
+    height: 70px;
+
+    border-radius: 10px;
+
+    background-color: white;
+}
+
+.disp p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-transform: uppercase;
+
+    color: rgb(126, 126, 126);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.disp p strong {
+
+    color: black;
+    font-size: 40px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-color: hsl(229, 57%, 11%);
+        background-image: url(/images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100vw 50vh;
+    }
+
+    .card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: min(100vw, 60rem);
+    }
+
+    .card-title {
+        justify-content: center;
+        width: 32%;
+        height: 50%;
+        margin-bottom: 12%;
+    }
+
+    .card-use {
+        width: 65%;
+        margin-bottom: 12%;
+    }
+
+    .content-card {
+        margin-bottom: 0;
+    }
+
+    .content-card h1 {
+        text-align: start;
+    }
+
+    .disp {
+        top: -45px;
+        right: 30px;
+
+        height: 60px;
+    }
+
+    .disp::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        right: 0px;
+        border-width: 30px;
+        border-style: solid;
+        border-color: transparent white transparent transparent;
+    }
+}
